@@ -3,9 +3,12 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import rehypeExternalLinks from 'rehype-external-links';
 
+const base = '/shopify-theme-handbook';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://shopify-theme-handbook.netlify.app',
+  site: 'https://saabbir.github.io',
+  base,
   markdown: {
     // Every external link (http/https) in the docs opens in a new tab.
     // rel: noopener/noreferrer prevents the new tab from getting a handle
@@ -25,27 +28,27 @@ export default defineConfig({
         // ICO fallback for browsers that don't support SVG favicons (e.g. Safari).
         {
           tag: 'link',
-          attrs: { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+          attrs: { rel: 'icon', href: `${base}/favicon.ico`, sizes: '32x32' },
         },
         // Explicit PNG fallbacks.
         {
           tag: 'link',
-          attrs: { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png', sizes: '32x32' },
+          attrs: { rel: 'icon', type: 'image/png', href: `${base}/favicon-32x32.png`, sizes: '32x32' },
         },
         {
           tag: 'link',
-          attrs: { rel: 'icon', type: 'image/png', href: '/favicon-16x16.png', sizes: '16x16' },
+          attrs: { rel: 'icon', type: 'image/png', href: `${base}/favicon-16x16.png`, sizes: '16x16' },
         },
         // iOS/iPadOS home screen bookmark icon.
         {
           tag: 'link',
-          attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' },
+          attrs: { rel: 'apple-touch-icon', href: `${base}/apple-touch-icon.png`, sizes: '180x180' },
         },
         // Makes GFM task-list checkboxes clickable, adds strikethrough + a
         // per-list progress bar. See public/scripts/checklist.js.
         {
           tag: 'script',
-          attrs: { src: '/scripts/checklist.js', defer: true },
+          attrs: { src: `${base}/scripts/checklist.js`, defer: true },
         },
       ],
       customCss: ['./src/styles/custom.css'],
@@ -54,6 +57,16 @@ export default defineConfig({
         // tab / bookmark name) without touching the on-page H1. See
         // src/components/Head.astro for why.
         Head: './src/components/Head.astro',
+      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/Saabbir/shopify-theme-handbook',
+        },
+      ],
+      editLink: {
+        baseUrl: 'https://github.com/Saabbir/shopify-theme-handbook/edit/main/',
       },
       lastUpdated: true,
       sidebar: [

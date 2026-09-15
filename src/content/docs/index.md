@@ -13,7 +13,15 @@ hero:
       link: /theme-store-requirements/
       icon: external
       variant: minimal
+    - text: Interactive QA Checklist
+      link: https://shopify-theme-docs.netlify.app/checklist.html
+      icon: external
+      variant: minimal
 ---
+
+## Companion tool
+
+Need a fast, tickable QA pass or a one-page scan of the 22 Theme Store rules? Use the [Theme Store Checklist](https://shopify-theme-docs.netlify.app) — a lightweight companion site kept separate from this handbook.
 
 ## What's in this handbook
 
