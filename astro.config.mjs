@@ -2,8 +2,23 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import rehypeExternalLinks from 'rehype-external-links';
+import { visit } from 'unist-util-visit';
 
 const base = '/shopify-theme-handbook';
+
+/** Prefix root-relative hrefs with Astro `base` (Starlight does not do this for Markdown). */
+function rehypeBaseLinks() {
+  return (tree) => {
+    visit(tree, 'element', (node) => {
+      if (node.tagName !== 'a') return;
+      const href = node.properties?.href;
+      if (typeof href !== 'string') return;
+      if (!href.startsWith('/') || href.startsWith('//')) return;
+      if (href === base || href.startsWith(`${base}/`)) return;
+      node.properties.href = `${base}${href}`;
+    });
+  };
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,8 +28,11 @@ export default defineConfig({
     // Every external link (http/https) in the docs opens in a new tab.
     // rel: noopener/noreferrer prevents the new tab from getting a handle
     // back to this page via window.opener (a known security/perf risk of
-    // target="_blank"). Internal links (/like/this/) are untouched.
+    // target="_blank").
+    // Root-relative internal links (/getting-started/) are rewritten to include
+    // `base`, otherwise GitHub Pages would resolve them at saabbir.github.io/.
     rehypePlugins: [
+      rehypeBaseLinks,
       [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
     ],
   },

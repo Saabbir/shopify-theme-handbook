@@ -6,11 +6,11 @@ hero:
   tagline: How we build Shopify themes, from a blank folder to a Theme Store submission. Written for developers who already know Shopify and Liquid.
   actions:
     - text: Get Started
-      link: /getting-started/
+      link: /shopify-theme-handbook/getting-started/
       icon: right-arrow
       variant: primary
     - text: Theme Store Requirements
-      link: /theme-store-requirements/
+      link: /shopify-theme-handbook/theme-store-requirements/
       icon: external
       variant: minimal
     - text: Interactive QA Checklist
