@@ -13,15 +13,15 @@ hero:
       link: /shopify-theme-handbook/theme-store-requirements/
       icon: external
       variant: minimal
-    - text: Interactive QA Checklist
-      link: https://saabbir.github.io/shopify-theme-store-checklist/checklist.html
+    - text: Submission Toolkit
+      link: https://saabbir.github.io/shopify-theme-store-checklist/checklist/
       icon: external
       variant: minimal
 ---
 
 ## Companion tool
 
-Need a fast, tickable QA pass or a one-page scan of the 22 Theme Store rules? Use the [Theme Store Checklist](https://saabbir.github.io/shopify-theme-store-checklist/) — a lightweight companion site kept separate from this handbook.
+Need to score Theme Store rules, run QA, package a zip, or diagnose a rejection? Use the [Theme Store Checklist](https://saabbir.github.io/shopify-theme-store-checklist/) — a day-of-submission toolkit kept separate from this handbook.
 
 ## What's in this handbook
 

@@ -6,7 +6,7 @@ The internal knowledge base for scaffolding, developing, and publishing Shopify 
 
 This repo is the **documentation site only**. It does not contain a Shopify theme's code.
 
-For day-of-submission scanning and interactive QA, use the companion site: [Theme Store Checklist](https://saabbir.github.io/shopify-theme-store-checklist/) ([repo](https://github.com/Saabbir/shopify-theme-store-checklist)).
+For day-of-submission work (scorecard, QA checklist, packaging gate, rejection autopsy), use the companion toolkit: [Theme Store Checklist](https://saabbir.github.io/shopify-theme-store-checklist/) ([repo](https://github.com/Saabbir/shopify-theme-store-checklist)).
 
 ## Stack
 
